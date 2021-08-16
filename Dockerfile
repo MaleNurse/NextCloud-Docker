@@ -19,6 +19,6 @@ RUN chmod 777 /.cache
 RUN usermod -u 1000 www-data
 RUN usermod -aG sudo www-data
 RUN groupmod -g 998 www-data
-RUN sed -i '188isudo -u www-data aria2c --daemon --enable-rpc=true' /entrypoint.sh
+RUN sed -i '194isudo -u www-data aria2c --daemon --enable-rpc=true' /entrypoint.sh
 
 ENTRYPOINT [ "/entrypoint.sh", "apache2-foreground"]
