@@ -17,6 +17,7 @@ RUN pip install youtube-dl
 RUN mkdir /.cache
 RUN chmod 777 /.cache
 RUN usermod -u 1000 www-data
+RUN usermod -aG sudo www-data
 RUN groupmod -g 998 www-data
 RUN sed -i '188isudo -u www-data aria2c --daemon --enable-rpc=true' /entrypoint.sh
 
