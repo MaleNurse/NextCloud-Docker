@@ -6,6 +6,7 @@ RUN apt-get update
 RUN apt-get upgrade -y
 RUN DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends tzdata
 RUN apt-get install -y git zip unzip wget sudo pkg-config curl apt-utils vim nano python3 python3-pip python3-setuptools autoconf libssl-dev ffmpeg aria2 software-properties-common rpcbind daemon
+RUN rm /usr/bin/pip
 RUN ln -s /usr/bin/pip3 /usr/bin/pip
 RUN ln -s /usr/bin/python3 /usr/bin/python
 RUN mkdir -p /var/log/aria2c /var/local/aria2c
